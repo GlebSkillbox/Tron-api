@@ -52,7 +52,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/tron.loc/api/auth/login?email=test@test.ru&password=12345",
+							"raw": "http://127.0.0.1:8000/api/auth/login?email=test@test.ru&password=12345",
 							"protocol": "http",
 							"host": [
 								"127",
