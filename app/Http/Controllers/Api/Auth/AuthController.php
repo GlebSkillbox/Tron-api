@@ -38,7 +38,7 @@ class AuthController extends Controller
     public function token()
     {
         $validator = Validator::make(request()->all(), [
-            'login'    => ['required', 'string'],
+            'email'    => ['required', 'string'],
             'password' => ['required']
         ]);
 
@@ -46,7 +46,7 @@ class AuthController extends Controller
             return response()->json(['errors' => $validator->errors()]);
         }
 
-        $user = User::where('login', request('login'))->first();
+        $user = User::where('email', request('email'))->first();
 
         if (! $user || ! \Hash::check(request('password'), $user->password)) {
             return response()->json(['error' => __('auth.failed')]);
