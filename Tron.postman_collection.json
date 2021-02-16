@@ -100,7 +100,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 2|HNkBPb0WtAY0bKaVOSVpcU7p52QHnwhF65fIGijQ",
+										"value": "Bearer 1|E351DBYz07ApDePrDjlhjOaj4nDjAcFJEylPheWx",
 										"type": "text"
 									}
 								],
@@ -160,7 +160,7 @@
 							"response": []
 						},
 						{
-							"name": "add",
+							"name": "store",
 							"request": {
 								"auth": {
 									"type": "noauth"
@@ -174,7 +174,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 2|HNkBPb0WtAY0bKaVOSVpcU7p52QHnwhF65fIGijQ",
+										"value": "Bearer 1|E351DBYz07ApDePrDjlhjOaj4nDjAcFJEylPheWx",
 										"type": "text"
 									}
 								],
@@ -292,6 +292,83 @@
 										"admin",
 										"news",
 										"14"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "private-api",
+			"item": [
+				{
+					"name": "feedback",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/feedback/create",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"feedback",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/feedback?owner_email=test@test.ru&message=New message 3&theme_id=1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"feedback"
+									],
+									"query": [
+										{
+											"key": "owner_email",
+											"value": "test@test.ru"
+										},
+										{
+											"key": "message",
+											"value": "New message 3"
+										},
+										{
+											"key": "theme_id",
+											"value": "1"
+										}
 									]
 								}
 							},
