@@ -6,83 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "accoun",
-			"item": [
-				{
-					"name": "registration",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/auth/register?login=test&email=test@test.ru&password=12345",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"auth",
-								"register"
-							],
-							"query": [
-								{
-									"key": "login",
-									"value": "test"
-								},
-								{
-									"key": "email",
-									"value": "test@test.ru"
-								},
-								{
-									"key": "password",
-									"value": "12345"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/auth/login?email=admin@admin.ru&password=1234",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"auth",
-								"login"
-							],
-							"query": [
-								{
-									"key": "email",
-									"value": "admin@admin.ru"
-								},
-								{
-									"key": "password",
-									"value": "1234"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "admin",
 			"item": [
 				{
@@ -90,6 +13,11 @@
 					"item": [
 						{
 							"name": "index",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -100,20 +28,15 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 1|E351DBYz07ApDePrDjlhjOaj4nDjAcFJEylPheWx",
+										"value": "{{bearerToken}}",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/news",
-									"protocol": "http",
+									"raw": "{{tronUrl}}/api/admin/news",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{tronUrl}}"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"admin",
@@ -125,6 +48,11 @@
 						},
 						{
 							"name": "show",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
 							"request": {
 								"method": "GET",
 								"header": [
@@ -135,20 +63,15 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 2|HNkBPb0WtAY0bKaVOSVpcU7p52QHnwhF65fIGijQ",
+										"value": "{{bearerToken}}",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/news/1",
-									"protocol": "http",
+									"raw": "{{tronUrl}}/api/admin/news/1",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{tronUrl}}"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"admin",
@@ -161,6 +84,11 @@
 						},
 						{
 							"name": "store",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
 							"request": {
 								"auth": {
 									"type": "noauth"
@@ -174,38 +102,39 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 1|E351DBYz07ApDePrDjlhjOaj4nDjAcFJEylPheWx",
+										"value": "{{bearerToken}}",
 										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "New title 3",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "content",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "10-10-1990",
+											"type": "text"
+										}
+									]
+								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/news?title=New title 3&content=content&date=10-10-1990",
-									"protocol": "http",
+									"raw": "{{tronUrl}}/api/admin/news",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{tronUrl}}"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"admin",
 										"news"
-									],
-									"query": [
-										{
-											"key": "title",
-											"value": "New title 3"
-										},
-										{
-											"key": "content",
-											"value": "content"
-										},
-										{
-											"key": "date",
-											"value": "10-10-1990"
-										}
 									]
 								}
 							},
@@ -213,6 +142,11 @@
 						},
 						{
 							"name": "edit",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -223,39 +157,40 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 2|HNkBPb0WtAY0bKaVOSVpcU7p52QHnwhF65fIGijQ",
+										"value": "{{bearerToken}}",
 										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Dolores delectus.",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "fdasfasdfsfasfassdfasdf",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "01-01-1998",
+											"type": "text"
+										}
+									]
+								},
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/news/10?title=Dolores delectus.&content=fdasfasdfsfasfassdfasdf&date=01-01-1998",
-									"protocol": "http",
+									"raw": "{{tronUrl}}/api/admin/news/10",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{tronUrl}}"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"admin",
 										"news",
 										"10"
-									],
-									"query": [
-										{
-											"key": "title",
-											"value": "Dolores delectus."
-										},
-										{
-											"key": "content",
-											"value": "fdasfasdfsfasfassdfasdf"
-										},
-										{
-											"key": "date",
-											"value": "01-01-1998"
-										}
 									]
 								}
 							},
@@ -263,6 +198,11 @@
 						},
 						{
 							"name": "delete",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
 							"request": {
 								"method": "DELETE",
 								"header": [
@@ -273,20 +213,15 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 2|HNkBPb0WtAY0bKaVOSVpcU7p52QHnwhF65fIGijQ",
+										"value": "{{bearerToken}}",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/admin/news/14",
-									"protocol": "http",
+									"raw": "{{tronUrl}}/api/admin/news/14",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{tronUrl}}"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"admin",
@@ -309,19 +244,25 @@
 					"item": [
 						{
 							"name": "create",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
 								"url": {
-									"raw": "http://127.0.0.1:8000/api/feedback/create",
-									"protocol": "http",
+									"raw": "{{tronUrl}}/api/feedback/create",
 									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
+										"{{tronUrl}}"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"feedback",
@@ -342,33 +283,134 @@
 										"type": "text"
 									}
 								],
-								"url": {
-									"raw": "http://127.0.0.1:8000/api/feedback?owner_email=test@test.ru&message=New message 3&theme_id=1",
-									"protocol": "http",
-									"host": [
-										"127",
-										"0",
-										"0",
-										"1"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"feedback"
-									],
-									"query": [
+								"body": {
+									"mode": "formdata",
+									"formdata": [
 										{
 											"key": "owner_email",
-											"value": "test@test.ru"
+											"value": "test@test.ru",
+											"type": "text"
 										},
 										{
 											"key": "message",
-											"value": "New message 3"
+											"value": "New message 3",
+											"type": "text"
 										},
 										{
 											"key": "theme_id",
-											"value": "1"
+											"value": "1",
+											"type": "text"
 										}
+									]
+								},
+								"url": {
+									"raw": "{{tronUrl}}/api/feedback",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"feedback"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "accoun",
+					"item": [
+						{
+							"name": "registration",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "login",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "admin@admin.ru",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tronUrl}}/api/auth/register",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@admin.ru",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tronUrl}}/api/auth/login",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
 									]
 								}
 							},
