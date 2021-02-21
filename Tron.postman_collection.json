@@ -442,6 +442,224 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "pages",
+					"item": [
+						{
+							"name": "index",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{tronUrl}}/api/pages",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"pages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{tronUrl}}/api/pages/1",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"pages",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "New page",
+											"type": "text"
+										},
+										{
+											"key": "body",
+											"value": "<body>\n    <p>Hello World!</p>\n</body>",
+											"type": "text"
+										},
+										{
+											"key": "uri",
+											"value": "{{tronUrl}}/new_page",
+											"type": "text"
+										},
+										{
+											"key": "owner_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tronUrl}}/api/pages",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"pages"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "PATCH",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Updated page",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tronUrl}}/api/pages/6",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"pages",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{tronUrl}}/api/pages/5",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"pages",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
