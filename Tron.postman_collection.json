@@ -148,7 +148,7 @@
 								}
 							},
 							"request": {
-								"method": "PUT",
+								"method": "POST",
 								"header": [
 									{
 										"key": "Accept",
@@ -165,24 +165,29 @@
 									"mode": "formdata",
 									"formdata": [
 										{
+											"key": "_method",
+											"value": "PATCH",
+											"type": "text"
+										},
+										{
 											"key": "title",
-											"value": "Dolores delectus.",
+											"value": "Created news",
 											"type": "text"
 										},
 										{
 											"key": "content",
-											"value": "fdasfasdfsfasfassdfasdf",
+											"value": "New content news",
 											"type": "text"
 										},
 										{
 											"key": "date",
-											"value": "01-01-1998",
+											"value": "1990-09-09",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{tronUrl}}/api/admin/news/10",
+									"raw": "{{tronUrl}}/api/admin/news/1",
 									"host": [
 										"{{tronUrl}}"
 									],
@@ -190,7 +195,7 @@
 										"api",
 										"admin",
 										"news",
-										"10"
+										"1"
 									]
 								}
 							},
@@ -218,7 +223,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{tronUrl}}/api/admin/news/14",
+									"raw": "{{tronUrl}}/api/admin/news/8",
 									"host": [
 										"{{tronUrl}}"
 									],
@@ -226,7 +231,7 @@
 										"api",
 										"admin",
 										"news",
-										"14"
+										"8"
 									]
 								}
 							},
