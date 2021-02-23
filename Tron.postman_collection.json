@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0c9bfafc-4a8a-45c3-a0cb-de4182f2b987",
+		"_postman_id": "0a429245-777f-42a0-a647-9624c291cc8a",
 		"name": "Tron",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -237,7 +237,8 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"_postman_isSubFolder": true
 				}
 			]
 		},
@@ -321,7 +322,8 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"_postman_isSubFolder": true
 				},
 				{
 					"name": "account",
@@ -387,25 +389,14 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "Accept",
+										"key": "Content-Type",
 										"value": "application/json",
 										"type": "text"
 									}
 								],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "email",
-											"value": "admin@admin.ru",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "1234",
-											"type": "text"
-										}
-									]
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"client@yandex.ru\",\n    \"password\": \"123456\"\n}"
 								},
 								"url": {
 									"raw": "{{tronUrl}}/api/auth/login",
@@ -441,7 +432,8 @@
 								]
 							}
 						}
-					]
+					],
+					"_postman_isSubFolder": true
 				},
 				{
 					"name": "pages",
@@ -659,7 +651,8 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"_postman_isSubFolder": true
 				}
 			]
 		}
