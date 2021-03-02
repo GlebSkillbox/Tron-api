@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0c9bfafc-4a8a-45c3-a0cb-de4182f2b987",
+		"_postman_id": "67f10817-b8e0-49ba-ad82-046ff42be91a",
 		"name": "Tron",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -137,7 +137,7 @@
 								}
 							},
 							"request": {
-								"method": "PUT",
+								"method": "PATCH",
 								"header": [
 									{
 										"key": "Content-Type",
@@ -206,6 +206,177 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "userFeedback",
+					"item": [
+						{
+							"name": "index",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{tronUrl}}/api/admin/users/feedback",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"users",
+										"feedback"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{tronUrl}}/api/admin/users/feedback/4",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"users",
+										"feedback",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"New Title 1\",\n    \"body\": \"new body feedback 1 \",\n    \"user_id\": 3\n}"
+								},
+								"url": {
+									"raw": "{{tronUrl}}/api/admin/users/feedback",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"users",
+										"feedback"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Editing title\",\n    \"body\": \"Editing body\",\n    \"user_id\": 2\n}"
+								},
+								"url": {
+									"raw": "{{tronUrl}}/api/admin/users/feedback/6",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"users",
+										"feedback",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{tronUrl}}/api/admin/users/feedback/6",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"admin",
+										"users",
+										"feedback",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -218,9 +389,7 @@
 						{
 							"name": "create",
 							"protocolProfileBehavior": {
-								"disabledSystemHeaders": {
-									"accept": true
-								}
+								"disabledSystemHeaders": {}
 							},
 							"request": {
 								"method": "GET",
@@ -384,9 +553,7 @@
 						{
 							"name": "index",
 							"protocolProfileBehavior": {
-								"disabledSystemHeaders": {
-									"accept": true
-								}
+								"disabledSystemHeaders": {}
 							},
 							"request": {
 								"method": "GET",
@@ -501,7 +668,7 @@
 								}
 							},
 							"request": {
-								"method": "PUT",
+								"method": "PATCH",
 								"header": [
 									{
 										"key": "Content-Type",
@@ -558,14 +725,14 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{tronUrl}}/api/pages/5",
+									"raw": "{{tronUrl}}/api/pages/6",
 									"host": [
 										"{{tronUrl}}"
 									],
 									"path": [
 										"api",
 										"pages",
-										"5"
+										"6"
 									]
 								}
 							},
