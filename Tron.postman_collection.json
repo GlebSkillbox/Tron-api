@@ -739,6 +739,86 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "addFavorite",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{tronUrl}}/api/users/2/favorite",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"2",
+										"favorite"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "removeFavorite",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{bearerToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1\n}"
+								},
+								"url": {
+									"raw": "{{tronUrl}}/api/users/1/favorite",
+									"host": [
+										"{{tronUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"1",
+										"favorite"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
