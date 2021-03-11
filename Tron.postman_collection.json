@@ -470,7 +470,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"login\": \"admin\",\r\n    \"email\": \"admin@admin.ru\",\r\n    \"password\": \"1234\"\r\n}",
+									"raw": "{\r\n    \"login\": \"admin1\",\r\n    \"email\": \"admin@admin.rus\",\r\n    \"password\": \"1234\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -744,79 +744,174 @@
 					"name": "users",
 					"item": [
 						{
-							"name": "addFavorite",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{bearerToken}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"user_id\": 1\n}",
-									"options": {
-										"raw": {
-											"language": "json"
+							"name": "favorite",
+							"item": [
+								{
+									"name": "addFavorite",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{bearerToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user_id\": 1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{tronUrl}}/api/users/2/favorite",
+											"host": [
+												"{{tronUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"2",
+												"favorite"
+											]
 										}
-									}
+									},
+									"response": []
 								},
-								"url": {
-									"raw": "{{tronUrl}}/api/users/2/favorite",
-									"host": [
-										"{{tronUrl}}"
-									],
-									"path": [
-										"api",
-										"users",
-										"2",
-										"favorite"
-									]
+								{
+									"name": "removeFavorite",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{bearerToken}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"user_id\": 1\n}"
+										},
+										"url": {
+											"raw": "{{tronUrl}}/api/users/1/favorite",
+											"host": [
+												"{{tronUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												"1",
+												"favorite"
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
+							]
 						},
 						{
-							"name": "removeFavorite",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{bearerToken}}",
-										"type": "text"
+							"name": "messages",
+							"item": [
+								{
+									"name": "all",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{bearerToken}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{tronUrl}}/api/user/messages",
+											"host": [
+												"{{tronUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"messages"
+											]
+										}
 									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"user_id\": 1\n}"
+									"response": []
 								},
-								"url": {
-									"raw": "{{tronUrl}}/api/users/1/favorite",
-									"host": [
-										"{{tronUrl}}"
-									],
-									"path": [
-										"api",
-										"users",
-										"1",
-										"favorite"
-									]
+								{
+									"name": "send",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{bearerToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"body\": \"new message 3\",\n    \"recipient_id\": 2\n}"
+										},
+										"url": {
+											"raw": "{{tronUrl}}/api/user/messages",
+											"host": [
+												"{{tronUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"messages"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "show",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{bearerToken}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{tronUrl}}/api/user/messages/1",
+											"host": [
+												"{{tronUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"messages",
+												"1"
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
+							]
 						}
 					]
 				}
